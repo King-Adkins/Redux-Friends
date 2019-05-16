@@ -18,8 +18,23 @@ export const getFriends = () => {
             .catch(err => {
                 dispatch({
                     type: FAIL,
-                    error: err
+                    error: 'Cant Load Friends'
                 })
             })
     }
 }
+
+    export const createFriend = (newFriend) => {
+        return dispatch => {
+            dispatch({type: LOADING})
+            axios
+                .post('http://localhost: 5000/api/friends/', newFriend)
+                .then(re => {
+                    console.log(re)
+                    dispatch({
+                        type: FAIL,
+                        error: 'Cant Create New Friend'
+                    })
+                })
+        }
+    }

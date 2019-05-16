@@ -1,5 +1,7 @@
 import React from 'react';
 import Friend from './Friend';
+import CreateFriend from './CreatedFriendForm';
+import UpdateFriend from './UpdateFriendForm'
 import { connect } from 'react-redux';
 import { getFriends } from '../Actions/actions';
 
@@ -24,6 +26,8 @@ class FriendsList extends React.Component {
                         <Friend key = {friend.id} friend = {friend}/>
                     )
                 })}
+                <CreateFriend />
+                <UpdateFriend />
             </div>
         )
     }
